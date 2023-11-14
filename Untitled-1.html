@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Método de Simpson</title>
+    <style>
+    
+        body {
+            
+            background-image: url('images.jfif'); 
+            background-size: cover;
+            background-position: center;
+            color: #0e0101; 
+            font-family: Arial, sans-serif;
+            margin: 500;
+            padding: 300;
+        }
+
+        header {
+            text-align: center;
+            padding: 50px;
+        }
+
+        nav {
+            text-align: center;
+            padding: 20px;
+        }
+
+        nav a {
+            color: #000000; /* Color de letra blanco (cambia a tu preferencia) */
+            text-decoration: none;
+            margin: 0 15px;
+            font-size: 18px;
+        }
+
+        section {
+            padding: 20px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Método de Simpson</h1>
+    </header>
+
+    <nav>
+        <a href="https://www.youtube.com/watch?v=ypaNlJTPf9c" target="_blank">Video 1</a>
+        <a href="https://www.youtube.com/watch?v=d5uPEFhLS0A" target="_blank">Video 2</a>
+        <a href="https://www.youtube.com/watch?v=wU3ZfPemDJc" target="_blank">Video 3</a>
+    </nav>
+
+    <section>
+        <p><H2>Bienvenido a mi página sobre el Método de Simpson. Aquí encontrarás enlaces a videos que explican este método numérico utilizado para la aproximación de integrales definidas.</H2></p>
+        <p><h3>Método de Simpson: Una Investigación
+
+            El Método de Simpson es una técnica numérica utilizada para aproximar el valor de una integral definida. Este método es una extensión del Método del Trapecio y proporciona una aproximación más precisa al dividir el área bajo la curva en segmentos curvos. Fue desarrollado por el matemático inglés Thomas Simpson en el siglo XVIII.</p>
+            <p>Grado:Principios Básicos:
+                Aproximación por Polinomios de Segundo 
+                
+                El Método de Simpson utiliza polinomios de segundo grado para aproximar la función bajo la curva. En lugar de aproximar cada subintervalo por una línea recta (como en el Método del Trapecio), Simpson utiliza un arco de parábola.</p>
+                <p>Número Par de Subintervalos:
+
+                    El método requiere que el número total de subintervalos sea par. Si el número de subintervalos es impar, se puede utilizar el Método de Simpson compuesto para dividir el último intervalo en dos subintervalos.
+                    Aplicaciones Prácticas:
+                    El Método de Simpson se utiliza comúnmente en:
+                    
+                    Integración Numérica:
+                    
+                    Aproximación de áreas bajo curvas y cálculo de integrales definidas.
+                    Análisis Numérico:
+                    
+                    Resolución de problemas matemáticos en los que las soluciones analíticas son difíciles o impracticables.
+                    Ingeniería y Ciencias Aplicadas:
+                    
+                    En la modelización y simulación numérica de fenómenos físicos.</H2></p>
+                    <p><font color="red">Conclusión:
+                        El Método de Simpson es una herramienta valiosa en el campo del análisis numérico y la integración numérica. Su precisión mejorada en comparación con métodos más simples lo hace especialmente útil para problemas en los que se requiere una alta precisión en la aproximación de integrales definidas. Sin embargo, es importante tener en cuenta las limitaciones y seleccionar el método apropiado según las características de la función a integrar</font>.</p>
+                        <img width=700 height=300 src="Nueva carpeta/material-tWqP2wQs.png"align="left">
+    </section>
+
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Método de Simpson</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+
+        #result {
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Método de Simpson</h1>
+
+    <label for="function">Función f(x): </label>
+    <input type="text" id="function" placeholder="Ejemplo: x^2" required>
+
+    <label for="a">Límite inferior (a): </label>
+    <input type="number" id="a" required>
+
+    <label for="b">Límite superior (b): </label>
+    <input type="number" id="b" required>
+
+    <label for="n">Número de subintervalos (n): </label>
+    <input type="number" id="n" required>
+
+    <button onclick="calculateSimpson()">Calcular</button>
+
+    <p id="result">Resultado:</p>
+
+    <script>
+        function calculateSimpson() {
+            const func = document.getElementById('function').value;
+            const a = parseFloat(document.getElementById('a').value);
+            const b = parseFloat(document.getElementById('b').value);
+            const n = parseInt(document.getElementById('n').value);
+
+            const h = (b - a) / n;
+            let result = 0;
+
+            for (let i = 0; i <= n; i++) {
+                const x = a + i * h;
+                const y = eval(func.replace('x', '(' + x + ')'));
+
+                if (i === 0 || i === n) {
+                    result += y;
+                } else if (i % 2 === 1) {
+                    result += 4 * y;
+                } else {
+                    result += 2 * y;
+                }
+            }
+
+            result *= h / 3;
+
+            document.getElementById('result').textContent = 'Resultado: ' + result.toFixed(6);
+        }
+    </script>
+
+</body>
+</html>
+
+

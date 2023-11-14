@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simble web site</title>
+</head>
+<body>
+    <h1>Lista de tareas</h1>
+    <p id ="msg">Currep task;</p>
+<ul>
+  <li class="list">"Agregar estilos visuales"</li>
+  <li class="list">"Agregar temas claros y oscuros"</li>
+  <li>"Habilitar cambio de tema"</li>
+</ul>
+</body>
+</html>
